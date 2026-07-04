@@ -3,6 +3,7 @@ package me.whiteship.demospringdata;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -10,6 +11,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+@ToString
 public class Post {
     @Id @GeneratedValue
     private Long id;
