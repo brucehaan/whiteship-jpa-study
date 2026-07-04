@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: demospringdata
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springdata
+    username: brucehan
+    password: pass
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
