@@ -62,7 +62,5 @@ class PostRepositoryTest {
         long spring = postRepository.countByTitleContains("spring");
         // then
         assertThat(spring).isEqualTo(1);
-
-
     }
 }
