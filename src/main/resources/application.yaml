@@ -1,13 +1,12 @@
 spring:
   application:
     name: demospringdata
-  datasource:
-    url: jdbc:postgresql://localhost:5432/springdata
-    username: brucehan
-    password: pass
 #  datasource:
-#    url: jdbc:h2:mem:testdb
-#    driver-class-name: org.h2.Driver
+#    url: jdbc:postgresql://localhost:5432/springdata
+#    username: brucehan
+#    password: pass
+  datasource:
+    url: jdbc:h2:mem:testdb
 
   jpa:
     hibernate:

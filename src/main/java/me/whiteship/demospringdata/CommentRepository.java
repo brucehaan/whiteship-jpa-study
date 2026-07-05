@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.RepositoryDefinition;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 
 /**
@@ -16,8 +17,8 @@ import java.util.List;
 //@RepositoryDefinition(domainClass = Comment.class, idClass = Long.class)
 public interface CommentRepository extends MyRepository<Comment, Long> {
 
-//    @Query(value = "select c from Comment as c", nativeQuery = true) // 기본값은 jpql
-    List<Comment> findByCommentContains(String keyword);
-
-    Page<Comment> findByLikeCountGreaterThanAndPost(int likeCount, Post post, Pageable pageable);
+//    List<Comment> findByCommentContainsIgnoreCaseAndLikeCountGreaterThan(String keyword, int likeCount);
+//    List<Comment> findByCommentContainsIgnoreCaseOrderByLikeCountDesc(String keyword);
+//    Page<Comment> findByCommentContainsIgnoreCase(String keyword, Pageable pageable);
+    Stream<Comment> findByCommentContainsIgnoreCase(String keyword, Pageable pageable);
 }
