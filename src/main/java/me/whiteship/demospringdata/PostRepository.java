@@ -1,5 +1,7 @@
 package me.whiteship.demospringdata;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PostRepository extends JpaRepository<Post, Long> {
@@ -19,5 +21,7 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 //        return em.createQuery("select p from Post p", Post.class)
 //                .getResultList();
 //    }
+    Page<Post> findByTitleContains(String title, Pageable pageable);
 
+    long countByTitleContains(String title);
 }
